@@ -1,0 +1,97 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+ENV/
+env/
+.env
+.venv
+
+# Elixir
+/_build/
+/cover/
+/deps/
+/doc/
+/.fetch
+erl_crash.dump
+*.ez
+*.beam
+/config/*.secret.exs
+.elixir_ls/
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Large files and binaries
+*.pkl
+*.h5
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.tar
+*.gz
+*.zip
+*.rar
+*.7z
+*.iso
+*.dmg
+*.model
+*.weights
+*.onnx
+*.tflite
+*.mlmodel
+*.caffemodel
+*.pb
+*.savedmodel
+*.hdf5
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+*.rdb
+
+# Quantum state files
+quantum_state_*.json
+quantum_memory_*.dump
+
+# Ollama model files
+models/
+.ollama/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+.*.sw?
+.sw?
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
