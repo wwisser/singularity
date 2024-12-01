@@ -1,0 +1,10 @@
+torch>=2.1.0
+transformers>=4.36.0
+numpy>=1.24.0
+qiskit>=0.44.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0  # For efficient 4-bit quantization
+scipy>=1.11.0
+sentencepiece>=0.1.99  # Required for Phi-2 tokenizer
+einops>=0.7.0  # Required for some transformer operations 
+requests>=2.31.0
