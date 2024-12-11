@@ -64,7 +64,7 @@ record Wigger(int age, double culturalAppropriationScore, boolean male, boolean 
 
 public class Main {
     public static void main(String[] args) {
-        Wigger candidate = new Wigger(24, 0.4, true, true, "Lit");
+        Wigger candidate = new Wigger(24, 0.4, true, true, "retarded online");
         HiringManager manager = new HiringManager();
         if (manager.shouldHire(candidate)) {
             System.out.println("Welcome to the team, " + candidate + "!");
