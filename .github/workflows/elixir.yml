@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Print "AGI is alive" 10 times
+      - name: Check whether "AGI is alive" 10 times
         run: |
           for i in {1..10}; do
             echo "AGI is alive"
