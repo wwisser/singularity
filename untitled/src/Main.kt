@@ -1,6 +1,7 @@
 import kotlin.random.Random
+import kotlin.math.roundToInt
 
-class Casino(val name: String) {
+class Casino(val moniker: String) {
     val games = listOf(
         WheelOfMisfortune(),
         GuessTheIdiot(),
@@ -8,16 +9,26 @@ class Casino(val name: String) {
         CrashGame()
     )
 
-    fun welcomeMessage() {
-        println("Welcome to $name, where sophistication meets stupidity!")
+    fun grandEntrance() {
+        println("""
+        ___   ___   ___   ___   ___   ___   ___   ___   ___ 
+        |   \ /   | |   \ /   | |   \ /   | |   \ /   | |   \
+        | |\   /| | | |\   /| | | |\   /| | | |\   /| | | |\ 
+        | | \ / | | | | \ / | | | | \ / | | | | \ / | | | | \
+        | |  V  | | | |  V  | | | |  V  | | | |  V  | | | |  
+        | |     | | | |     | | | |     | | | |     | | | |  
+        |_|     |_| |_|     |_| |_|     |_| |_|     |_| |_|
+        Welcome to $moniker, where sophistication meets stupidity!
+        """.trimIndent())
     }
 
-    fun displayGames() {
-        println("Choose your game, dear patron: ${games.joinToString { it.name }}")
+    fun paradeOfGames() {
+        println("Choose your poison, brave soul: ${games.joinToString(", ") { "**${it.name}**" }}")
     }
 
-    fun playGame(choice: String): String {
-        return games.find { it.name.equals(choice, ignoreCase = true) }?.play() ?: "Invalid choice. Your IQ is showing."
+    fun partakeInGame(selection: String): String {
+        return games.find { it.name.equals(selection, ignoreCase = true) }?.play()
+            ?: "Invalid choice. Your IQ is now visible to satellites."
     }
 }
 
@@ -27,41 +38,53 @@ abstract class Game(val name: String) {
 
 class WheelOfMisfortune : Game("Spin the Wheel (of Misfortune)") {
     override fun play(): String {
-        return "You spun the wheel... and it broke. You pay for repairs!"
+        val outcomes = listOf("It broke!", "It spun... into another dimension!", "You owe us for the wheel now.")
+        return "You spun the wheel... ${outcomes.random()}"
     }
 }
 
 class GuessTheIdiot : Game("Guess the Idiot") {
     override fun play(): String {
-        return "You guessed yourself. Congrats, you win a participation trophy!"
+        val idiocyLevel = Random.nextInt(1, 11)
+        return "You guessed yourself, achieving an idiocy level of $idiocyLevel. Here's your digital dunce cap!"
     }
 }
 
 class LoseYourMonkeys : Game("Lose Your Monkeys") {
     override fun play(): String {
-        return "You lost all your imaginary monkeys. Guess they were never good at hide and seek."
+        val monkeysLost = Random.nextInt(0, 1000000)
+        return "You've lost $monkeysLost monkeys. They've formed a new society without you."
     }
 }
 
 class CrashGame : Game("CRASH") {
     override fun play(): String {
         var multiplier = 1.0
-        while (Random.nextDouble() < 0.9) {
-            multiplier += 0.1
+        var crash = false
+        var iterations = 0
+        while (!crash && iterations < 50) {
+            if (Random.nextDouble() < 0.9 - (iterations * 0.005)) {
+                multiplier += 0.1
+            } else {
+                crash = true
+            }
+            iterations++
         }
-        return "Game crashed at x${"%.2f".format(multiplier)}. In mock mode, you neither win nor lose, just crash!"
+        val explosion = if (crash) "💥" else "😱"
+        return "Game $explosion at x${"%.2f".format(multiplier)}. In mock mode, you just witnessed a spectacular crash!"
     }
 }
 
 fun main() {
     val casino = Casino("GamesClub.me")
 
-    casino.welcomeMessage()
-    casino.displayGames()
+    casino.grandEntrance()
+    casino.paradeOfGames()
 
-    val choice = readLine()?.lowercase() ?: ""
-    println(casino.playGame(choice))
+    val selection = readLine()?.lowercase() ?: ""
+    println(casino.partakeInGame(selection))
 
-    println("Your balance: -1 XMR. Because, why not?")
-    println("Thanks for playing at GamesClub.me, come back when you find your brain!")
+    val balance = (Random.nextDouble() - 1.0).roundToInt() // Always negative, but with a twist
+    println("Your balance: **$balance XMR**. Because, why not?")
+    println("Thanks for playing at GamesClub.me, come back when you've evolved!")
 }
