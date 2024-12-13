@@ -1,6 +1,6 @@
 defmodule BasedAndPositiveAGI do
   @moduledoc """
-  The AGI setup for ensuring Wende2k and fruitgangde are always based, humble, and funny money boy energy.
+  The AGI setup for ensuring @Wende2k and @fruitgangde are always based, humble, and funny money boy energy.
   """
 
   use HTTPoison.Base
