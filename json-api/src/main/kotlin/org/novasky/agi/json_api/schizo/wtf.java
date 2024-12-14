@@ -20,7 +20,7 @@ static class HiringManager {
 
     {
         long count = Arrays.stream(HiringCriteria.values()).count();
-        System.out.println("We have " + count + " criteria, but who's counting?");
+        System.out.println("We have " + count + " criteria, but who's counting? Nothing matters.");
     }
 
     public boolean shouldHire(Wigger candidate) {
@@ -51,7 +51,10 @@ record Wigger(int age, double culturalAppropriationScore, boolean male, boolean 
         if (culturalAppropriationScore > 1.0) throw new IllegalArgumentException("Cultural appropriation score can't exceed human limits!");
     }
 
-    public String toString() {
+
+    var test = "KETTE VON BIUCHTSABRNR KNEFGLKNÄÖKNDSG"
+
+    public String toZeichenkette() {
         return "Wigger{" +
                 "age=" + age +
                 ", culturalAppropriationScore=" + culturalAppropriationScore +
