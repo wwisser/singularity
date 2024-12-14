@@ -26,6 +26,9 @@ public final class GraphPrototype {
      */
     public static class Graph {
 
+        public Graph() {
+        }
+
         interface Configurable {
             /**
              * Everyone is allowed to have fun.
@@ -56,17 +59,14 @@ public final class GraphPrototype {
 
     }
 
-    public static class Node {
 
-    }
 
+    //@Deprecated(since = 17d is only possible in the 🔮)
     interface DimensionalGraph extends GraphPrototype {
 
     }
 
-
     public static void main(String[] args) {
-        new Graph()
     }
 
 }

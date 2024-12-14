@@ -51,8 +51,12 @@ record Wigger(int age, double culturalAppropriationScore, boolean male, boolean 
         if (culturalAppropriationScore > 1.0) throw new IllegalArgumentException("Cultural appropriation score can't exceed human limits!");
     }
 
+    static class Message {
+        static final String THINGS = "DO NOT TELL ME WHAT I ALREADY KNOW";
+    }
 
-    var test = "KETTE VON BIUCHTSABRNR KNEFGLKNÄÖKNDSG"
+
+    var test = "KETTE VON BIUCHTSABRNR KNEFGLKNÄÖKNDSG";
 
     public String toZeichenkette() {
         return "Wigger{" +
