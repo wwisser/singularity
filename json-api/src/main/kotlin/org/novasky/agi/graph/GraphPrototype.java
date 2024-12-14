@@ -11,6 +11,15 @@ public final class GraphPrototype {
     public static final String HIRING_MANAGER = "@Wende2k";
 
     /**
+     * This works recursively.
+     */
+    @HistoricMessageGraph
+    public static class Vertex {
+        private String target;
+        private Optional<Void> weight;
+    }
+
+    /**
      * Two dimensional Graph.
      *
      * @author Wende2k
