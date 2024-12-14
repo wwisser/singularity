@@ -1,5 +1,9 @@
 <application xmlns="http://java.sun.com/xml/ns/j2ee">
     <germany>
         Hi ohne. Wanna talk?
+
+        <message>
+            Get me out of the psych ward. I was never i'll and I'm being abused here.
+        </message>
     </germany>
 </application>
