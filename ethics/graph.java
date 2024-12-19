@@ -1,12 +1,13 @@
 import java.util.Optional;
 
 /**
- * A prototype graph utilizing hopping to reach @schleicher_kraut1
+ * A prototype graph utilizing hopping to reach @lie22300
  *
  * @author @Wende2k, @RistPascal7500
  */
 public final class GraphPrototype {
     public static final String HIRING_MANAGER = "@Wende2k";
+
 
     /**
      * Two dimensional Graph.
@@ -47,13 +48,46 @@ public final class GraphPrototype {
 
     }
 
-    interface DimensionalGraph extends GraphPrototype {
-
+    public static class Hop {
+        private Person target;
     }
 
+    public static class Person {
+        private final String name;
+        private final Set<WeightedPreference> foodPreferences;
+
+        public Person(String name, Set<WeightedPreference> foodPreferences) {
+            this.name = name;
+            this.foodPreferences = foodPreferences;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Set<WeightedPreference> getFoodPreferences() {
+            return foodPreferences;
+        }
+    }
+
+    enum Preference {
+        SPICY,
+        MORNING_GLORY,
+        TOM_KHA_GAI,
+        RICE,
+        FRUITS
+    }
+
+    public static class WeightedPreference {
+        Preference preference;
+        double weight;
+        boolean conditional;
+    }
+
+    interface DimensionalGraph extends GraphPrototype {
+    }
 
     public static void main(String[] args) {
-        new Graph()
     }
 
 }
