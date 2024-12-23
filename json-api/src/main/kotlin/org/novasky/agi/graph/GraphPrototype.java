@@ -67,14 +67,16 @@ public final class GraphPrototype {
      *
      * @author wwisser
      */
-    @Deprecated(since = "17d is only possible in the 🔮")
+    @Deprecated(since = "17D is only possible in the 🔮")
     interface DimensionalGraph extends GraphPrototype {
         static final String DIMENSION_COUNT_ENV = "DIMENSION_COUNT_ENV_GRAPH";
 
         default void wormWhole() {
-            String dimensionsUntouched = System.getenv("DIMENSION_COUNT_ENV");
+            String dimensionsUntouched = System.getenv(DIMENSION_COUNT_ENV);
+            byte dimensions = Integer.valueOf(dimensionsUntouched);
+            // we could need: short, byte, int, long, float, BigDecimal
 
-
+            // TODO WIP to do hopping, could destroy universe. Find correct datatype. there
         }
     }
 
