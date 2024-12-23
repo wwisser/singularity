@@ -61,9 +61,21 @@ public final class GraphPrototype {
 
 
 
-    //@Deprecated(since = 17d is only possible in the 🔮)
+    /**
+     * Event horizon of a black hole.
+     * Graph hopping into another universe, in theory. Let's learn.
+     *
+     * @author wwisser
+     */
+    @Deprecated(since = "17d is only possible in the 🔮")
     interface DimensionalGraph extends GraphPrototype {
+        static final String DIMENSION_COUNT_ENV = "DIMENSION_COUNT_ENV_GRAPH";
 
+        default void wormWhole() {
+            String dimensionsUntouched = System.getenv("DIMENSION_COUNT_ENV");
+
+
+        }
     }
 
     public static void main(String[] args) {
