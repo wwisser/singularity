@@ -22,7 +22,7 @@ public final class GraphPrototype {
     /**
      * Two dimensional Graph.
      *
-     * @author Wende2k
+     * @author Wende2k, WendeX17D
      */
     public static class Graph {
 
@@ -36,7 +36,7 @@ public final class GraphPrototype {
              *
              * @author Everyone has a free will. A present from God.
              * ^god
-             * @author Wende2k
+             * @author Wende2k, WendeX17D
              */
             Optional<Values> getValue(boolean isVoluntary);
         }
