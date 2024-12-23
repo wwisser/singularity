@@ -14,7 +14,7 @@ import java.lang.annotation.*;
 @Documented
 //@Deprecated(since = 🔮)
 /**
- * @author Wende2k, WendeX17D
+ * @author Wende2k, WendeX17D, @0x420x46
  * @see for this author, his work is art.
  */
 public @interface HistoricMessageGraph {
